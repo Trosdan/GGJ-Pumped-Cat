@@ -1,20 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://qloir1ke665x"]
+[gd_scene load_steps=4 format=3 uid="uid://qloir1ke665x"]
 
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_1lrpl"]
 [ext_resource type="Texture2D" uid="uid://nv5xxdr62tgk" path="res://sprites/Player.png" id="1_4cggv"]
-[ext_resource type="Texture2D" uid="uid://dkvi1lyluvveh" path="res://sprites/Background.png" id="1_655bn"]
-[ext_resource type="Script" path="res://scripts/Player.gd" id="1_jtybw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bew5c"]
 size = Vector2(46, 99)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("1_655bn")
-
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("1_jtybw")
-speed = 1000
+script = ExtResource("1_1lrpl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_bew5c")
@@ -22,5 +17,3 @@ shape = SubResource("RectangleShape2D_bew5c")
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_4cggv")
-
-[node name="Camera2D" type="Camera2D" parent="Area2D"]
