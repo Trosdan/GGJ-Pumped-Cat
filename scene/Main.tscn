@@ -1,12 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://qloir1ke665x"]
 
-[ext_resource type="Texture2D" uid="uid://nv5xxdr62tgk" path="res://sprites/Player.png" id="1_4cggv"]
 [ext_resource type="Texture2D" uid="uid://dkvi1lyluvveh" path="res://sprites/Background.png" id="1_655bn"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_jtybw"]
-[ext_resource type="PackedScene" uid="uid://csud4baomkhbt" path="res://prefabs/enemy.tscn" id="4_uhgrh"]
+[ext_resource type="Texture2D" uid="uid://ds1eyp013p8bx" path="res://sprites/final/characters/main/buffcat-10.png" id="3_xufne"]
+[ext_resource type="PackedScene" uid="uid://csud4baomkhbt" path="res://prefabs/Enemy.tscn" id="4_uhgrh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bew5c"]
-size = Vector2(77, 60)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g04nq"]
+radius = 28.0
+height = 88.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,18 +19,15 @@ unique_name_in_owner = true
 script = ExtResource("1_jtybw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_bew5c")
+shape = SubResource("CapsuleShape2D_g04nq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_4cggv")
+texture = ExtResource("3_xufne")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_uhgrh")]
-position = Vector2(304, 184)
-metadata/Tag = "enemy"
+[node name="Enemy" parent="." instance=ExtResource("4_uhgrh")]
+position = Vector2(346, 182)
 
 [connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
