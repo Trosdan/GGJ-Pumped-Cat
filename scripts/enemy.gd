@@ -6,13 +6,13 @@ extends RigidBody2D
 
 var player
 
-
 func _ready():
 	player = get_node("%Player")
   
 func _process(delta):
-	var enemy_velocity = position.direction_to(player.position)
+	pass
+	#var enemy_velocity = position.direction_to(player.position)
 	
-	enemy_velocity = enemy_velocity.normalized() * speed
-  
-	position += enemy_velocity * delta
+	#enemy_velocity = enemy_velocity.normalized() * speed
+	
+	#position += enemy_velocity * delta
