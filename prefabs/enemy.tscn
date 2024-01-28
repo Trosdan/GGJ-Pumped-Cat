@@ -9,7 +9,7 @@ size = Vector2(43, 39)
 [node name="Enemy" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_tf5j4")
-metadata/Tag = "enemy"
+metadata/IsEnemy = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 1.5)

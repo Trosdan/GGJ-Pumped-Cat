@@ -27,6 +27,7 @@ texture = ExtResource("1_655bn")
 [node name="Player" type="Area2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_jtybw")
+player_life = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_g04nq")
