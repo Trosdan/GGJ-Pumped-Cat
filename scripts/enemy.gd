@@ -7,7 +7,8 @@ extends RigidBody2D
 var player
 
 func _ready():
-	player = get_node("%Player")
+	pass
+	# player = get_node("%Player")
   
 func _process(delta):
 	pass
